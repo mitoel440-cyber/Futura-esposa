@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Aurora ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cormorant Garamond', serif;
+}
+
+body{
+background:#050816;
+overflow:hidden;
+color:white;
+}
+
+/* ========================= */
+/* FUNDO ESTRELADO */
+/* ========================= */
+
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-2;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+}
+
+@keyframes twinkle{
+
+0%{
+opacity:.2;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:.2;
+}
+
+}
+
+/* ========================= */
+/* CORAÇÕES */
+/* ========================= */
+
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:20px;
+animation:floatUp linear forwards;
+pointer-events:none;
+z-index:-1;
+}
+
+@keyframes floatUp{
+
+0%{
+transform:translateY(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
+}
+
+/* ========================= */
+/* CAPA */
+/* ========================= */
+
+#cover{
+
+height:100vh;
+width:100%;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+text-align:center;
+}
+
+.subtitle{
+
+font-size:1.5rem;
+margin-top:15px;
+color:#f8d57e;
+
+}
+
+.small{
+
+margin-top:10px;
+font-size:1.1rem;
+opacity:.8;
+
+}
+
+/* ========================= */
+/* CARTA */
+/* ========================= */
+
+#envelope{
+
+width:320px;
+height:220px;
+
+position:relative;
+
+margin-top:40px;
+
+cursor:pointer;
+
+transition:.6s;
+
+}
+
+#envelope:hover{
+
+transform:scale(1.05);
+
+}
+
+.envelope-body{
+
+position:absolute;
+width:100%;
+height:100%;
+
+background:#f4e7d4;
+
+border-radius:8px;
+
+}
+
+.envelope-flap{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:0;
+height:0;
+
+border-left:160px solid transparent;
+border-right:160px solid transparent;
+border-top:120px solid #e5d5bf;
+
+transform-origin:top;
+
+transition:1s;
+
+z-index:2;
+
+}
+
+.seal{
+
+position:absolute;
+
+width:70px;
+height:70px;
+
+background:#c62828;
+
+border-radius:50%;
+
+top:75px;
+left:125px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:28px;
+
+z-index:3;
+
+box-shadow:0 0 20px rgba(0,0,0,.3);
+
+}
+
+/* ========================= */
+/* BOTÃO MÚSICA */
+/* ========================= */
+
+.music-btn{
+
+margin-top:25px;
+
+padding:12px 30px;
+
+border:none;
+
+border-radius:30px;
+
+background:#f8d57e;
+
+font-size:1.1rem;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.music-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/* ========================= */
+/* LIVRO */
+/* ========================= */
+
+#book{
+
+display:none;
+
+height:100vh;
+width:100%;
+
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+}
+
+.page{
+
+display:none;
+
+max-width:900px;
+width:100%;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+padding:40px;
+
+border-radius:25px;
+
+text-align:center;
+
+animation:fade .8s ease;
+
+}
+
+.page.active{
+
+display:block;
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateX(80px);
+}
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+
+.page h1{
+
+font-size:3rem;
+margin-bottom:25px;
+color:#f8d57e;
+
+}
+
+.page p{
+
+font-size:1.5rem;
+line-height:2.3rem;
+
+}
+
+.page img{
+
+margin-top:25px;
+
+width:280px;
+max-width:90%;
+
+border-radius:20px;
+
+box-shadow:0 0 25px rgba(255,255,255,.2);
+
+}
+
+.next-btn{
+
+margin-top:30px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:30px;
+
+background:#f8d57e;
+
+cursor:pointer;
+
+font-size:1.2rem;
+
+}
+
+/* ========================= */
+/* FINAL */
+/* ========================= */
+
+#final-screen{
+
+display:none;
+
+height:100vh;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+#final-screen h1{
+
+font-size:4rem;
+
+}
+
+#final-screen h2{
+
+margin-top:20px;
+
+font-size:2rem;
+
+}
+
+.yes-btn{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+font-size:1.2rem;
+
+border:none;
+
+border-radius:30px;
+
+cursor:pointer;
+
+background:#ff5ea7;
+color:white;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<audio id="music">
+
+<source src="https://drive.google.com/uc?export=download&id=1HaGaU9n2Ua0HtuX6K0FWUyorjiC3P0Oj" type="audio/mpeg">
+
+</audio>
+
+<div id="cover">
+
+<h1 style="font-size:4rem;">💌</h1>
+
+<div class="subtitle">
+De Kauã para a futura esposa Aurora ❤️
+</div>
+
+<div class="small">
+Leia com atenção cada página
+</div>
+
+<button class="music-btn" id="musicBtn">
+🎵 Tocar nossa música
+</button>
+
+<div id="envelope">
+
+<div class="envelope-body"></div>
+
+<div class="envelope-flap"></div>
+
+<div class="seal">❤️</div>
+
+</div>
+
+                             </div><div id="book">
+
+<!-- PÁGINA 1 -->
+
+<div class="page active">
+
+<h1>💌 Antes de você continuar...</h1>
+
+<p>
+
+Oi, Aurora.
+
+<br><br>
+
+Antes de qualquer coisa, eu queria te agradecer por estar aqui.
+
+<br><br>
+
+Talvez você ache que isso é apenas um site.
+
+Algumas páginas.
+
+Algumas fotos.
+
+Algumas palavras.
+
+<br><br>
+
+Mas a verdade é que isso é muito mais do que parece.
+
+<br><br>
+
+Porque dentro de cada página existe um sentimento.
+
+Dentro de cada frase existe um pedaço do que eu sinto por você.
+
+<br><br>
+
+Eu poderia simplesmente ter feito uma pergunta.
+
+Poderia ter sido rápido.
+
+Poderia ter sido apenas uma mensagem.
+
+<br><br>
+
+Mas você merece muito mais do que algo simples.
+
+Você merece saber o quanto se tornou importante para mim.
+
+<br><br>
+
+Então eu só te peço uma coisa.
+
+Leia cada página até o final.
+
+Observe cada detalhe.
+
+<br><br>
+
+Porque isso não é apenas uma história.
+
+É a nossa história.
+
+<br><br>
+
+E quando você chegar ao final...
+
+Vai entender por que eu preparei tudo isso para você. ❤️
+
+</p>
+
+<button class="next-btn">
+Continuar ❤️
+</button>
+
+</div>
+
+<!-- PÁGINA 2 -->
+
+<div class="page">
+
+<h1>🌙 A coincidência mais bonita da minha vida</h1>
+
+<img src="https://i.postimg.cc/DSKBvg0Y/0f9640e2599f44cfbf0504a394a9478a.webp">
+
+<p>
+
+Tudo começou em 14 de maio.
+
+<br><br>
+
+Engraçado pensar que naquele dia eu não fazia ideia do que estava prestes a acontecer.
+
+<br><br>
+
+Era para ser apenas mais um vídeo.
+
+Mais um comentário.
+
+Mais um momento qualquer.
+
+<br><br>
+
+Mas a vida tem um jeito curioso de esconder as melhores surpresas nos lugares mais improváveis.
+
+<br><br>
+
+E foi exatamente assim que você apareceu.
+
+<br><br>
+
+No começo era apenas uma conversa.
+
+Depois virou rotina.
+
+Depois virou expectativa.
+
+Depois virou saudade.
+
+<br><br>
+
+E sem que eu percebesse, você começou a ocupar um espaço que antes estava vazio.
+
+<br><br>
+
+Hoje eu olho para trás e penso que aquele simples comentário foi uma das melhores decisões que eu poderia ter tomado.
+
+Porque foi ele que me trouxe até você.
+
+</p>
+
+<button class="next-btn">
+Continuar ❤️
+</button>
+
+</div>
+
+<!-- PÁGINA 3 -->
+
+<div class="page">
+
+<h1>✨ Quando percebi que você era diferente</h1>
+
+<img src="https://i.postimg.cc/Mn8d6DHs/1e55ced2b33a49089cd5a1af365e4d94.webp">
+
+<p>
+
+Eu não sei exatamente quando aconteceu.
+
+<br><br>
+
+Não teve uma data.
+
+Não teve um aviso.
+
+Não teve um momento específico.
+
+<br><br>
+
+Apenas aconteceu.
+
+<br><br>
+
+Em algum ponto entre nossas conversas eu comecei a perceber que você era diferente.
+
+<br><br>
+
+Diferente porque me fazia sorrir olhando para uma tela.
+
+Diferente porque conseguia melhorar meus dias sem nem perceber.
+
+Diferente porque me fazia querer continuar conversando mesmo quando o assunto já tinha acabado.
+
+<br><br>
+
+E quanto mais eu te conhecia, mais eu queria continuar te conhecendo.
+
+<br><br>
+
+Foi aí que eu entendi que aquilo não era algo comum.
+
+Você estava se tornando alguém especial.
+
+</p>
+
+<button class="next-btn">
+Continuar ❤️
+</button>
+
+</div>
+
+<!-- PÁGINA 4 -->
+
+<div class="page">
+
+<h1>🌹 As pequenas coisas que me fizeram gostar de você</h1>
+
+<img src="https://i.postimg.cc/nCm3f5Fq/7454a6af97584457be1610a6a5e58483.webp">
+
+<p>
+
+Talvez você nem perceba.
+
+Mas foram justamente as pequenas coisas que me fizeram gostar tanto de você.
+
+<br><br>
+
+O seu jeito.
+
+A sua voz.
+
+O seu sorriso.
+
+As suas mensagens.
+
+O jeito que você fala das coisas que gosta.
+
+<br><br>
+
+Os momentos em que você me faz rir sem nem tentar.
+
+<br><br>
+
+Os momentos em que você me faz sentir importante.
+
+<br><br>
+
+Foi detalhe por detalhe.
+
+Dia após dia.
+
+Mensagem após mensagem.
+
+<br><br>
+
+Até que, sem perceber, você se tornou alguém impossível de ignorar.
+
+</p>
+
+<button class="next-btn">
+Continuar ❤️
+</button>
+
+</div><!-- PÁGINA 5 -->
+
+<div class="page">
+
+<h1>⭐ A luz que apareceu nos meus dias</h1>
+
+<img src="https://i.postimg.cc/Mn8d6DH3/eafff9cc68bf40148da8134c40b96b67.webp">
+
+<p>
+
+Desde que você apareceu, meus dias ficaram diferentes.
+
+<br><br>
+
+Mais leves.
+
+Mais felizes.
+
+Mais coloridos.
+
+<br><br>
+
+É estranho como uma única pessoa consegue mudar tanta coisa sem perceber.
+
+<br><br>
+
+Você se tornou uma das melhores partes dos meus dias.
+
+<br><br>
+
+A pessoa que eu procuro quando acordo.
+
+A pessoa que eu penso quando algo bom acontece.
+
+A pessoa que consegue arrancar um sorriso meu mesmo nos dias difíceis.
+
+<br><br>
+
+E por isso você acabou se tornando uma luz dentro da minha vida.
+
+</p>
+
+<button class="next-btn">
+Continuar ❤️
+</button>
+
+</div>
+
+<!-- PÁGINA 6 -->
+
+<div class="page">
+
+<h1>❤️ O que você se tornou para mim</h1>
+
+<img src="https://i.postimg.cc/JsWPrq02/IMG-20260519-083900.jpg">
+
+<p>
+
+Eu não sei exatamente quando aconteceu.
+
+<br><br>
+
+Mas em algum momento você deixou de ser apenas alguém com quem eu conversava.
+
+<br><br>
+
+Você se tornou alguém que eu queria por perto.
+
+Alguém que eu queria cuidar.
+
+Alguém que eu queria ver feliz.
+
+<br><br>
+
+Você se tornou a pessoa que eu sinto falta quando não está.
+
+A pessoa que eu quero contar minhas conquistas.
+
+A pessoa que eu quero apoiar quando as coisas não estão bem.
+
+<br><br>
+
+Você se tornou alguém muito importante para mim.
+
+Muito mais do que talvez imagine.
+
+</p>
+
+<button class="next-btn">
+Continuar ❤️
+</button>
+
+</div>
+
+<!-- PÁGINA 7 -->
+
+<div class="page">
+
+<h1>🌌 A razão de tudo isso</h1>
+
+<p>
+
+Aurora...
+
+<br><br>
+
+Eu ainda lembro daquele comentário.
+
+<br><br>
+
+Eu ainda lembro das primeiras conversas.
+
+<br><br>
+
+Eu ainda lembro da sensação de perceber que você era diferente.
+
+<br><br>
+
+Diferente porque me fazia sorrir sem perceber.
+
+Diferente porque me fazia querer continuar.
+
+Diferente porque me fazia imaginar um futuro.
+
+<br><br>
+
+E desde então, cada dia só me deu mais certeza.
+
+<br><br>
+
+A certeza de que eu quero continuar escrevendo essa história.
+
+<br><br>
+
+A certeza de que eu quero viver novos capítulos ao seu lado.
+
+<br><br>
+
+A certeza de que, entre tantas pessoas, foi você quem conquistou meu coração.
+
+<br><br>
+
+E por isso hoje eu quero te fazer uma pergunta...
+
+</p>
+
+<button class="next-btn">
+Continuar ❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- TELA FINAL -->
+
+<div id="final-screen">
+
+<h1>❤️ Aurora...</h1>
+
+<h2>Quer namorar comigo?</h2>
+
+<button class="yes-btn" onclick="acceptLove()">
+💖 Sim
+</button>
+
+<button class="yes-btn" onclick="acceptLove()">
+💖 Com toda certeza
+</button>
+
+</div>
+
+<script>
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<150;i++){
+
+let star=document.createElement("div");
+
+star.classList.add("star");
+
+star.style.width=Math.random()*4+"px";
+star.style.height=star.style.width;
+
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDelay=Math.random()*5+"s";
+
+stars.appendChild(star);
+
+}
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*4+4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+},500);
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+const music =
+document.getElementById("music");
+
+musicBtn.onclick=()=>{
+
+if(music.paused){
+
+music.play();
+
+musicBtn.innerHTML="⏸️ Pausar música";
+
+}else{
+
+music.pause();
+
+musicBtn.innerHTML="🎵 Tocar nossa música";
+
+}
+
+};
+
+const envelope =
+document.getElementById("envelope");
+
+const flap =
+document.querySelector(".envelope-flap");
+
+envelope.onclick=()=>{
+
+flap.style.transform=
+"rotateX(180deg)";
+
+setTimeout(()=>{
+
+document.getElementById("cover")
+.style.display="none";
+
+document.getElementById("book")
+.style.display="flex";
+
+},900);
+
+};
+
+let currentPage=0;
+
+const pages=
+document.querySelectorAll(".page");
+
+document.querySelectorAll(".next-btn")
+.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+pages[currentPage]
+.classList.remove("active");
+
+currentPage++;
+
+if(currentPage < pages.length){
+
+pages[currentPage]
+.classList.add("active");
+
+}else{
+
+document.getElementById("book")
+.style.display="none";
+
+document.getElementById("final-screen")
+.style.display="flex";
+
+}
+
+});
+
+});
+
+function acceptLove(){
+
+document.body.innerHTML=`
+
+<div style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:#050816;
+color:white;
+padding:30px;
+">
+
+<h1 style="font-size:5rem;">
+❤️
+</h1>
+
+<h1>
+Você acabou de realizar um dos meus maiores desejos.
+</h1>
+
+<h2 style="margin-top:20px;">
+Eu te amo, Aurora ❤️
+</h2>
+
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
