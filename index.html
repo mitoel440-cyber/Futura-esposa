@@ -19,14 +19,10 @@ font-family:'Cormorant Garamond', serif;
 }
 
 body{
-background:#050816;
-overflow:hidden;
+background:linear-gradient(to bottom,#020617,#071330,#0b1d4a);
 color:white;
+overflow:hidden;
 }
-
-/* ========================= */
-/* FUNDO ESTRELADO */
-/* ========================= */
 
 #stars{
 position:fixed;
@@ -34,7 +30,6 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-overflow:hidden;
 z-index:-2;
 }
 
@@ -46,354 +41,210 @@ animation:twinkle 3s infinite;
 }
 
 @keyframes twinkle{
-
-0%{
-opacity:.2;
+0%{opacity:.2;}
+50%{opacity:1;}
+100%{opacity:.2;}
 }
-
-50%{
-opacity:1;
-}
-
-100%{
-opacity:.2;
-}
-
-}
-
-/* ========================= */
-/* CORAÇÕES */
-/* ========================= */
-
-.heart{
-position:fixed;
-bottom:-50px;
-font-size:20px;
-animation:floatUp linear forwards;
-pointer-events:none;
-z-index:-1;
-}
-
-@keyframes floatUp{
-
-0%{
-transform:translateY(0);
-opacity:1;
-}
-
-100%{
-transform:translateY(-120vh);
-opacity:0;
-}
-
-}
-
-/* ========================= */
-/* CAPA */
-/* ========================= */
 
 #cover{
-
 height:100vh;
-width:100%;
-
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-
-padding:20px;
 text-align:center;
+padding:20px;
+}
+
+.main-title{
+font-size:4rem;
+margin-bottom:15px;
 }
 
 .subtitle{
-
-font-size:1.5rem;
-margin-top:15px;
+font-size:1.7rem;
 color:#f8d57e;
-
 }
 
-.small{
-
-margin-top:10px;
-font-size:1.1rem;
+.small-text{
+margin-top:15px;
+font-size:1.2rem;
 opacity:.8;
-
 }
-
-/* ========================= */
-/* CARTA */
-/* ========================= */
 
 #envelope{
-
+margin-top:40px;
 width:320px;
 height:220px;
-
 position:relative;
-
-margin-top:40px;
-
 cursor:pointer;
-
-transition:.6s;
-
+transition:.5s;
 }
 
 #envelope:hover{
-
 transform:scale(1.05);
-
 }
 
 .envelope-body{
-
 position:absolute;
 width:100%;
 height:100%;
-
-background:#f4e7d4;
-
-border-radius:8px;
-
+background:#f2e6d4;
+border-radius:10px;
 }
 
 .envelope-flap{
-
 position:absolute;
-
 top:0;
 left:0;
-
 width:0;
 height:0;
-
 border-left:160px solid transparent;
 border-right:160px solid transparent;
-border-top:120px solid #e5d5bf;
-
+border-top:120px solid #e4d2ba;
 transform-origin:top;
-
 transition:1s;
-
 z-index:2;
-
 }
 
 .seal{
-
 position:absolute;
-
-width:70px;
-height:70px;
-
-background:#c62828;
-
+width:75px;
+height:75px;
+background:#b91c1c;
 border-radius:50%;
-
-top:75px;
-left:125px;
-
+top:70px;
+left:122px;
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:28px;
-
+font-size:30px;
 z-index:3;
-
 box-shadow:0 0 20px rgba(0,0,0,.3);
-
 }
-
-/* ========================= */
-/* BOTÃO MÚSICA */
-/* ========================= */
-
-.music-btn{
-
-margin-top:25px;
-
-padding:12px 30px;
-
-border:none;
-
-border-radius:30px;
-
-background:#f8d57e;
-
-font-size:1.1rem;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.music-btn:hover{
-
-transform:scale(1.05);
-
-}
-
-/* ========================= */
-/* LIVRO */
-/* ========================= */
 
 #book{
-
 display:none;
-
 height:100vh;
-width:100%;
-
 justify-content:center;
 align-items:center;
-
 padding:20px;
-
 }
 
 .page{
-
 display:none;
-
-max-width:900px;
 width:100%;
-
+max-width:950px;
 background:rgba(255,255,255,.08);
-
 backdrop-filter:blur(10px);
-
 padding:40px;
-
 border-radius:25px;
-
 text-align:center;
-
 animation:fade .8s ease;
-
+max-height:90vh;
+overflow-y:auto;
 }
 
 .page.active{
-
 display:block;
-
 }
 
 @keyframes fade{
-
 from{
 opacity:0;
 transform:translateX(80px);
 }
-
 to{
 opacity:1;
 transform:translateX(0);
 }
-
 }
 
 .page h1{
-
 font-size:3rem;
-margin-bottom:25px;
 color:#f8d57e;
-
+margin-bottom:25px;
 }
 
 .page p{
-
 font-size:1.5rem;
-line-height:2.3rem;
-
+line-height:2.4rem;
 }
 
 .page img{
-
 margin-top:25px;
-
-width:280px;
+width:320px;
 max-width:90%;
-
 border-radius:20px;
-
 box-shadow:0 0 25px rgba(255,255,255,.2);
-
 }
 
 .next-btn{
-
 margin-top:30px;
-
 padding:15px 35px;
-
 border:none;
-
 border-radius:30px;
-
 background:#f8d57e;
-
-cursor:pointer;
-
 font-size:1.2rem;
-
+cursor:pointer;
 }
 
-/* ========================= */
-/* FINAL */
-/* ========================= */
+.page::-webkit-scrollbar{
+width:8px;
+}
+
+.page::-webkit-scrollbar-thumb{
+background:#f8d57e;
+border-radius:20px;
+}
 
 #final-screen{
-
 display:none;
-
 height:100vh;
-
 justify-content:center;
 align-items:center;
-
 flex-direction:column;
-
 text-align:center;
-
 padding:30px;
-
 }
 
 #final-screen h1{
-
 font-size:4rem;
-
 }
 
 #final-screen h2{
-
-margin-top:20px;
-
 font-size:2rem;
-
+margin-top:20px;
 }
 
 .yes-btn{
-
-margin-top:25px;
-
+margin-top:20px;
 padding:15px 35px;
-
 font-size:1.2rem;
-
 border:none;
-
 border-radius:30px;
-
 cursor:pointer;
-
 background:#ff5ea7;
 color:white;
+}
 
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:24px;
+pointer-events:none;
+animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
 }
 
 </style>
@@ -403,27 +254,17 @@ color:white;
 
 <div id="stars"></div>
 
-<audio id="music">
-
-<source src="https://drive.google.com/uc?export=download&id=1HaGaU9n2Ua0HtuX6K0FWUyorjiC3P0Oj" type="audio/mpeg">
-
-</audio>
-
 <div id="cover">
 
-<h1 style="font-size:4rem;">💌</h1>
+<div class="main-title">💌</div>
 
 <div class="subtitle">
 De Kauã para a futura esposa Aurora ❤️
 </div>
 
-<div class="small">
+<div class="small-text">
 Leia com atenção cada página
 </div>
-
-<button class="music-btn" id="musicBtn">
-🎵 Tocar nossa música
-</button>
 
 <div id="envelope">
 
@@ -436,9 +277,8 @@ Leia com atenção cada página
 </div>
 
 </div>
-<div id="book">
 
-<!-- PÁGINA 1 -->
+<div id="book">
 
 <div class="page active">
 
@@ -474,20 +314,6 @@ Dentro de cada frase existe um pedaço do que eu sinto por você.
 
 <br><br>
 
-Eu poderia simplesmente ter feito uma pergunta.
-
-Poderia ter sido rápido.
-
-Poderia ter sido apenas uma mensagem.
-
-<br><br>
-
-Mas você merece muito mais do que algo simples.
-
-Você merece saber o quanto se tornou importante para mim.
-
-<br><br>
-
 Então eu só te peço uma coisa.
 
 Leia cada página até o final.
@@ -500,12 +326,6 @@ Porque isso não é apenas uma história.
 
 É a nossa história.
 
-<br><br>
-
-E quando você chegar ao final...
-
-Vai entender por que eu preparei tudo isso para você. ❤️
-
 </p>
 
 <button class="next-btn">
@@ -513,7 +333,6 @@ Continuar ❤️
 </button>
 
 </div>
-
 <!-- PÁGINA 2 -->
 
 <div class="page">
@@ -532,15 +351,15 @@ Engraçado pensar que naquele dia eu não fazia ideia do que estava prestes a ac
 
 <br><br>
 
-Era para ser apenas mais um vídeo.
-
-Mais um comentário.
+Era para ser apenas mais um comentário.
 
 Mais um momento qualquer.
 
+Mais um dia comum.
+
 <br><br>
 
-Mas a vida tem um jeito curioso de esconder as melhores surpresas nos lugares mais improváveis.
+Mas a vida tem um jeito curioso de esconder os momentos mais importantes onde menos esperamos.
 
 <br><br>
 
@@ -558,13 +377,13 @@ Depois virou saudade.
 
 <br><br>
 
-E sem que eu percebesse, você começou a ocupar um espaço que antes estava vazio.
+E sem que eu percebesse, você começou a ocupar um espaço que antes ninguém ocupava.
 
 <br><br>
 
-Hoje eu olho para trás e penso que aquele simples comentário foi uma das melhores decisões que eu poderia ter tomado.
+Hoje eu olho para trás e agradeço por aquele momento.
 
-Porque foi ele que me trouxe até você.
+Porque sem ele talvez eu nunca tivesse conhecido a garota que mudaria tantos dos meus dias.
 
 </p>
 
@@ -588,11 +407,11 @@ Eu não sei exatamente quando aconteceu.
 
 <br><br>
 
-Não teve uma data.
+Não teve uma data específica.
 
 Não teve um aviso.
 
-Não teve um momento específico.
+Não teve um instante mágico marcado no calendário.
 
 <br><br>
 
@@ -600,25 +419,27 @@ Apenas aconteceu.
 
 <br><br>
 
-Em algum ponto entre nossas conversas eu comecei a perceber que você era diferente.
+Em algum momento entre nossas conversas eu comecei a perceber que você era diferente.
 
 <br><br>
 
-Diferente porque me fazia sorrir olhando para uma tela.
-
-Diferente porque conseguia melhorar meus dias sem nem perceber.
-
-Diferente porque me fazia querer continuar conversando mesmo quando o assunto já tinha acabado.
+Diferente porque conseguia arrancar sorrisos meus sem nem tentar.
 
 <br><br>
 
-E quanto mais eu te conhecia, mais eu queria continuar te conhecendo.
+Diferente porque fazia meus dias ficarem mais leves.
 
 <br><br>
 
-Foi aí que eu entendi que aquilo não era algo comum.
+Diferente porque eu sempre queria falar mais cinco minutos com você.
 
-Você estava se tornando alguém especial.
+E depois mais cinco.
+
+E mais cinco.
+
+<br><br>
+
+Até perceber que você já tinha se tornado uma das minhas partes favoritas do dia.
 
 </p>
 
@@ -640,39 +461,35 @@ Continuar ❤️
 
 Talvez você nem perceba.
 
-Mas foram justamente as pequenas coisas que me fizeram gostar tanto de você.
+Mas foram justamente as pequenas coisas que fizeram eu me apaixonar cada vez mais.
 
 <br><br>
 
-O seu jeito.
+Seu jeito.
 
-A sua voz.
+Seu sorriso.
 
-O seu sorriso.
+Sua voz.
 
-As suas mensagens.
+Sua risada.
+
+Seu coração.
+
+<br><br>
 
 O jeito que você fala das coisas que gosta.
 
-<br><br>
+O jeito que se preocupa.
 
-Os momentos em que você me faz rir sem nem tentar.
-
-<br><br>
-
-Os momentos em que você me faz sentir importante.
+O jeito que cuida.
 
 <br><br>
 
-Foi detalhe por detalhe.
-
-Dia após dia.
-
-Mensagem após mensagem.
+Foram detalhes tão pequenos que talvez você nunca tenha percebido.
 
 <br><br>
 
-Até que, sem perceber, você se tornou alguém impossível de ignorar.
+Mas foram esses detalhes que fizeram você se tornar alguém impossível de esquecer.
 
 </p>
 
@@ -691,41 +508,37 @@ Continuar ❤️
 
 <p>
 
-Desde que você apareceu, meus dias ficaram diferentes.
+Desde que você apareceu, alguma coisa mudou.
 
 <br><br>
 
-Mais leves.
+Meus dias ficaram mais leves.
 
 Mais felizes.
 
-Mais coloridos.
+Mais bonitos.
 
 <br><br>
 
-É estranho como uma única pessoa consegue mudar tanta coisa sem perceber.
+Você se tornou aquela mensagem que eu espero.
+
+Aquela notificação que me faz sorrir.
+
+Aquela pessoa que consegue melhorar um dia ruim sem nem perceber.
 
 <br><br>
 
-Você se tornou uma das melhores partes dos meus dias.
+É estranho como uma única pessoa pode iluminar tantos momentos.
 
 <br><br>
 
-A pessoa que eu procuro quando acordo.
+Mas você conseguiu.
 
-A pessoa que eu penso quando algo bom acontece.
-
-A pessoa que consegue arrancar um sorriso meu mesmo nos dias difíceis.
-
-<br><br>
-
-E por isso você acabou se tornando uma luz dentro da minha vida.
+E talvez nem faça ideia do quanto.
 
 </p>
 
-<button class="next-btn">
-Continuar ❤️
-</button>
+<button class="next-btn">Continuar ❤️</button>
 
 </div>
 
@@ -743,35 +556,31 @@ Eu não sei exatamente quando aconteceu.
 
 <br><br>
 
-Mas em algum momento você deixou de ser apenas alguém com quem eu conversava.
+Mas em algum momento você deixou de ser apenas alguém especial.
 
 <br><br>
 
-Você se tornou alguém que eu queria por perto.
+Você virou a pessoa que eu penso quando acordo.
 
-Alguém que eu queria cuidar.
+A pessoa que eu procuro durante o dia.
 
-Alguém que eu queria ver feliz.
-
-<br><br>
-
-Você se tornou a pessoa que eu sinto falta quando não está.
-
-A pessoa que eu quero contar minhas conquistas.
-
-A pessoa que eu quero apoiar quando as coisas não estão bem.
+A pessoa que eu sinto falta quando não está.
 
 <br><br>
 
-Você se tornou alguém muito importante para mim.
+Você se tornou alguém que eu quero cuidar.
 
-Muito mais do que talvez imagine.
+Alguém que eu quero ver sorrindo.
+
+Alguém que eu quero ter por perto.
+
+<br><br>
+
+E foi aí que eu percebi que aquilo que eu sentia tinha se tornado algo muito maior.
 
 </p>
 
-<button class="next-btn">
-Continuar ❤️
-</button>
+<button class="next-btn">Continuar ❤️</button>
 
 </div>
 
@@ -807,7 +616,7 @@ Diferente porque me fazia imaginar um futuro.
 
 <br><br>
 
-E desde então, cada dia só me deu mais certeza.
+E desde então cada dia só me deu mais certeza.
 
 <br><br>
 
@@ -819,7 +628,7 @@ A certeza de que eu quero viver novos capítulos ao seu lado.
 
 <br><br>
 
-A certeza de que, entre tantas pessoas, foi você quem conquistou meu coração.
+A certeza de que entre tantas pessoas foi você quem conquistou meu coração.
 
 <br><br>
 
@@ -827,15 +636,11 @@ E por isso hoje eu quero te fazer uma pergunta...
 
 </p>
 
-<button class="next-btn">
-Continuar ❤️
-</button>
+<button class="next-btn">Continuar ❤️</button>
 
 </div>
 
 </div>
-
-<!-- TELA FINAL -->
 
 <div id="final-screen">
 
@@ -843,16 +648,11 @@ Continuar ❤️
 
 <h2>Quer namorar comigo?</h2>
 
-<button class="yes-btn" onclick="acceptLove()">
-💖 Sim
-</button>
+<button class="yes-btn" onclick="acceptLove()">💖 Sim</button>
 
-<button class="yes-btn" onclick="acceptLove()">
-💖 Com toda certeza
-</button>
+<button class="yes-btn" onclick="acceptLove()">💖 Com toda certeza</button>
 
 </div>
-
 <script>
 
 const stars = document.getElementById("stars");
@@ -874,53 +674,6 @@ star.style.animationDelay=Math.random()*5+"s";
 stars.appendChild(star);
 
 }
-
-setInterval(()=>{
-
-let heart=document.createElement("div");
-
-heart.classList.add("heart");
-
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.animationDuration=
-(Math.random()*4+4)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},8000);
-
-},500);
-
-const musicBtn =
-document.getElementById("musicBtn");
-
-const music =
-document.getElementById("music");
-
-musicBtn.onclick=()=>{
-
-if(music.paused){
-
-music.play();
-
-musicBtn.innerHTML="⏸️ Pausar música";
-
-}else{
-
-music.pause();
-
-musicBtn.innerHTML="🎵 Tocar nossa música";
-
-}
-
-};
 
 const envelope =
 document.getElementById("envelope");
@@ -973,11 +726,40 @@ document.getElementById("book")
 document.getElementById("final-screen")
 .style.display="flex";
 
+startFinalHearts();
+
 }
 
 });
 
 });
+
+function startFinalHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*4+4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+},400);
+
+}
 
 function acceptLove(){
 
@@ -995,7 +777,7 @@ color:white;
 padding:30px;
 ">
 
-<h1 style="font-size:5rem;">
+<h1 style="font-size:6rem;">
 ❤️
 </h1>
 
@@ -1006,6 +788,14 @@ Você acabou de realizar um dos meus maiores desejos.
 <h2 style="margin-top:20px;">
 Eu te amo, Aurora ❤️
 </h2>
+
+<p style="
+margin-top:25px;
+font-size:1.4rem;
+max-width:700px;
+">
+E prometo continuar escrevendo os próximos capítulos dessa história ao seu lado.
+</p>
 
 </div>
 
